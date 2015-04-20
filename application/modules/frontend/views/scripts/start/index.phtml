@@ -1,0 +1,62 @@
+
+<div>
+    <h1>START</h1>
+</div>
+
+
+<div class="container-fluid">
+
+    <?php if (isset($this->success)): ?>
+
+        <div class="row">
+            <div class="col-md-4" style="color: blueviolet;">
+                <p><?php echo $this->text ?></p>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <?php if (!empty($this->textErrors['txt1'])): ?>
+
+        <?php foreach ($this->textErrors['txt1'] as $k => $v): ?>
+            <div class="row">
+                <div class="col-md-4" style="color: red;">
+                    <p><?php echo $v ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+
+
+    <?php endif; ?>
+</div>
+
+<div class="container" style="margin-bottom: 50px; margin-top: 50px;">
+
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post" action="<?php echo $this->url() ?>" role="form">
+
+                <div class="form-group">
+                    <?php
+                    echo $this->formText('txt1', '', array(
+                        'class' => 'form-control',
+                        'id' => 'txt1',
+                        'placeholder' => 'Wpisz imię',
+                            )
+                    );
+                    ?>
+                </div>
+
+                <div class="form-group">
+                    <?php echo $this->formSelect('selector', '', array('class' => 'form-control'), $this->selector) ?>
+                </div>
+
+                <div class="form-group">
+                    <?php echo $this->formSubmit('send', 'SEND', array('class' => 'btn btn-default')); ?>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

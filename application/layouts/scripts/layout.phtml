@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <?php $this->headLink()->prependStylesheet('bootstrap-3.2.0-dist/css/bootstrap.min.css', 'screen') ?>
+        <?php $this->headLink()->prependStylesheet('css/mainStyle.css', 'screen') ?>
+        <?php echo $this->headLink() ?>
+        <?php $this->headScript()->appendFile('jquery/jquery-1.11.js') ?>
+        <?php $this->headScript()->appendFile('bootstrap-3.2.0-dist/js/bootstrap.min.js') ?>
+        <?php $this->headScript()->appendFile('js/mainScript.js') ?>
+        <?php echo $this->headScript() ?>
+    </head>
+    <body>
+        <h1>Header</h1>
+        <?php echo $this->layout()->content; ?>
+        <h1>FOOTER</h1>
+    </body>
+</html>
